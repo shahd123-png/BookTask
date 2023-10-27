@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    .search-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+
+input {
+  font-size: 1rem;
+}
+
+.book-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: .25rem;
+  margin-top: 1rem;
+}
+
+.card {
+  border: 1px solid black;
+  background-color: white;
+  padding: .5rem;
+}
+
+.card > .header {
+  margin-bottom: .25rem;
+}
+
+.card > .body {
+  font-size: .8rem;
+  color: #777;
+}
+
+.hide {
+  display: none;
+}
+</style>
+  
+</head>
+<body>
+  <div class="search-wrapper">
+    <label for="search">Search books</label>
+    <input type="search" id="search" data-search>
+  </div>
+  <div class="book-cards" data-book-cards-container></div>
+  <template data-book-template>
+    <div class="card">
+      <div class="header" data-header></div>
+      <div class="body" data-body></div>
+    </div>
+  </template>
+</body>
+
+<script>
+const bookCardTemplate = document.querySelector("[data-book-template]")
+const bookCardContainer = document.querySelector("[data-book-cards-container]")
+const searchInput = document.querySelector("[data-search]")
+
+let books = []
+
+searchInput.addEventListener("input", e => {
+  const value = e.target.value.toLowerCase()
+  books.forEach(book => {
+    const isVisible =
+    book.name.toLowerCase().includes(value) 
+    book.element.classList.toggle("hide", !isVisible)
+  })
+})
+
+fetch("https://www.googleapis.com/books/v1/volumes?q=science+fiction&key=AIzaSyCF6ZG48YwmxCuLB6PgGHP9yeevssOKxrU")
+  .then(res => res.json())
+  .then(data => {
+    books = data.items.map(book => {
+      const card = bookCardTemplate.content.cloneNode(true).children[0]
+      const header = card.querySelector("[data-header]")
+      header.textContent = book.volumeInfo.title
+      bookCardContainer.append(card)
+      return { name: book.volumeInfo.title, element: card }
+    })
+  })
+
+</script>
+
+</html>
