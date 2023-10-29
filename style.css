@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
+
+
+.body{
+    margin: 0;
+}
 /*Main Header*/
 .header {
     display: flex;
@@ -148,16 +153,11 @@
 .Parent-div-book-img-and-description {
     cursor: pointer;
     display: flex;
-    position: absolute;
-    top: 6rem;
-    left: 0;
-    right: 0;
     padding: 0px 3rem;
-    margin-top: 2rem;
+    margin-top: 8rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     align-items: flex-end;
     justify-content: space-evenly;
-
 }
 
 .vertical-and-description {
@@ -252,11 +252,10 @@
 .icons-3-details {
     display: flex;
     align-items: center;
-    position: relative;
-    top: 42rem;
     justify-content: center;
     padding: 1rem 6rem;
     gap: 4rem;
+    margin-top: 5rem;
 }
 
 .icon-and-text {
@@ -309,18 +308,18 @@
 }
 
 .selected {
-
-    display: flex;
+    column-gap: 1rem;
+    row-gap: 3rem;
+    display: grid;
     flex-direction: column;
-    padding: 1rem 5rem;
-    top: 50rem;
+    padding: 3rem 4rem;
     font-family: Arial, Helvetica, sans-serif;
-    gap: 5rem;
     left: 0;
     right: 0;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: start;
 }
 
 .book {
@@ -336,6 +335,16 @@
     white-space: nowrap;
     overflow: hidden;
     width: 15rem;
+    cursor: pointer;
+}
+
+.book-name-seconed-page{
+    margin: 3px 0px;
+   
+}
+
+#publisher{
+    width: 13rem;
 }
 
 .author-name {
@@ -346,8 +355,9 @@
 }
 
 .book1-selected-img {
-    height: 22rem;
-    width: 15rem;
+    height: 27rem;
+    width: 19rem;
+    cursor: pointer;
 }
 
 .price-and-fav {
@@ -420,6 +430,7 @@
 .big-div-data-book {
     display: flex;
     flex-direction: column;
+    padding: 0 3rem;
 }
 
 .data-about-book {
@@ -528,6 +539,7 @@
     flex-direction: row;
     justify-content: space-between;
     margin-top: 2rem;
+    gap: 3rem;
 
 }
 
@@ -687,8 +699,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: absolute;
     visibility: hidden;
+    top: 7rem;
+    right: 0;
+    left: 0;
+    flex-direction: column;
 }
 .icon-fav-hidden{
     visibility: hidden;
@@ -901,3 +917,17 @@
     align-items: center;
     margin-top: 1rem;
 }
+
+.footer{
+    background-color: rgba(147, 125, 194, 255);
+    width: 100%;
+    height: 9%;
+
+}
+
+.footer-text{
+    text-align: center;
+}
+
+  
+  

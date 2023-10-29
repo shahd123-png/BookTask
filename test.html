@@ -1,90 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-    .search-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: .25rem;
-}
-
-input {
-  font-size: 1rem;
-}
-
-.book-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: .25rem;
-  margin-top: 1rem;
-}
-
-.card {
-  border: 1px solid black;
-  background-color: white;
-  padding: .5rem;
-}
-
-.card > .header {
-  margin-bottom: .25rem;
-}
-
-.card > .body {
-  font-size: .8rem;
-  color: #777;
-}
-
-.hide {
-  display: none;
-}
-</style>
-  
+  <title> Books | We Love Reading</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
-  <div class="search-wrapper">
-    <label for="search">Search books</label>
-    <input type="search" id="search" data-search>
-  </div>
-  <div class="book-cards" data-book-cards-container></div>
-  <template data-book-template>
-    <div class="card">
-      <div class="header" data-header></div>
-      <div class="body" data-body></div>
+  <header class="header">
+
+    <div class="text-header">
+
+      <h1 class="heading-header" onclick="headclick()"> B-W<img class="book-img-header" src="Pictures/book.png">rld
+      </h1>
+      <div class="vertical-line"></div>
+      <p class="paragraph-header">We love<br>books</p>
     </div>
-  </template>
+
+    <div class="search-box">
+      <input id="search-bar" type="search" placeholder="Type any book here">
+
+    </div>
+    <div class="links">
+      <a class="links-a" href="productPage.html">Privacy policy</a>
+      <a class="links-a" href="test.html">Warranty</a>
+      <a class="links-a" href="index.html">Shipping </a>
+      <a class="links-a" href="index.html">Return</a>
+    </div>
+    <div class="icons">
+      <div class="parent-icon-shopping">
+        <span class="span-number" id="cart-count">0</span>
+        <img class="icon-shopping" src="Pictures/shopping.png">
+
+      </div>
+      <div class="vertical-line-icon"></div>
+
+      <div class="parent-fav">
+        <span class="span-number" id="fav-count">0</span>
+        <img class="icon" src="Pictures/heart (1).png" onclick="favClickDisplay()">
+      </div>
+
+      <div class="vertical-line-icon"></div>
+      <a href="signup.html" target="_self"> <img class="icon" src="Pictures/user.png"></a>
+    </div>
+  </header>
+
+  <main>
+   <div>
+    <h1> hi</h1>
+   </div>
+
+  </main>
+
+  <footer>
+    <div>
+      <h1>hi</h1>
+    </div>
+  </footer>
+
 </body>
-
-<script>
-const bookCardTemplate = document.querySelector("[data-book-template]")
-const bookCardContainer = document.querySelector("[data-book-cards-container]")
-const searchInput = document.querySelector("[data-search]")
-
-let books = []
-
-searchInput.addEventListener("input", e => {
-  const value = e.target.value.toLowerCase()
-  books.forEach(book => {
-    const isVisible =
-    book.name.toLowerCase().includes(value) 
-    book.element.classList.toggle("hide", !isVisible)
-  })
-})
-
-fetch("https://www.googleapis.com/books/v1/volumes?q=science+fiction&key=AIzaSyCF6ZG48YwmxCuLB6PgGHP9yeevssOKxrU")
-  .then(res => res.json())
-  .then(data => {
-    books = data.items.map(book => {
-      const card = bookCardTemplate.content.cloneNode(true).children[0]
-      const header = card.querySelector("[data-header]")
-      header.textContent = book.volumeInfo.title
-      bookCardContainer.append(card)
-      return { name: book.volumeInfo.title, element: card }
-    })
-  })
-
-</script>
 
 </html>

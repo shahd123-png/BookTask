@@ -48,15 +48,9 @@ function saveDataLogin() {
        other.style.visibility="visibile";
 
        var h = document.querySelector(".name-hidden");
+       h.innerHTML= localStorage.getItem("email");
        h.style.display="block";
        h.style.visibility="visibile";
-
-
-
-
-
-
-        
     }
 
     else{
