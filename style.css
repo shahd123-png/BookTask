@@ -931,3 +931,10 @@
 
   
   
+
+
+.skeleton-loader {
+    background-color: #ccc; 
+    height: 27rem;
+    width: 19rem;
+}

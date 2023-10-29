@@ -12,7 +12,11 @@ function fetchAndDisplayBooks (){
       return;
     }
     isLoading = true;
-    
+
+    const skeletonImages = Array.from({ length: booksPerPage }, () => `<div class="skeleton-loader"></div>`);
+
+    document.querySelector(".Big-div-api-vertical").innerHTML += skeletonImages.join('');
+
 
     fetch(apiUrl)
     .then(response => {
@@ -24,7 +28,9 @@ function fetchAndDisplayBooks (){
 })
 .then(data => {
   var books = data;
-  //document.querySelector(".Big-div-api-vertical").innerHTML += `<div class="selected-for-you-div" id="Big-div-api-horizantal">`;
+  document.querySelectorAll('.skeleton-loader').forEach((element) => {
+    element.remove();
+});
   for (let i = 0; i < books.items.length; i++) {
     const book = books.items[i];
     const author = book.volumeInfo.authors && book.volumeInfo.authors.length > 0 ? book.volumeInfo.authors[0] : 'Unknown Author';
