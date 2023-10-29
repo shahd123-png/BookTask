@@ -12,6 +12,7 @@ function fetchAndDisplayBooks (){
       return;
     }
     isLoading = true;
+    
 
     fetch(apiUrl)
     .then(response => {
@@ -49,13 +50,6 @@ function fetchAndDisplayBooks (){
     })
     
     ++currentPage;
-
-    if (!isLoading) {
-      const skeletonElements = document.querySelector('.skeleton-loader');
-      skeletonElements.forEach((element) => {
-        element.classList.remove("skeleton-loader");
-      });
-    }
 
   }
 
@@ -97,7 +91,6 @@ function sendDataToSecondPage(title, image, author ,publisher, language,pageCoun
 
 document.addEventListener('DOMContentLoaded', function() {
   const data = JSON.parse(localStorage.getItem('bookData'));
-
   if (data) {
     document.querySelector('.bookTitle').textContent = data.title;
     document.querySelector('.main-pic').src = data.image;
@@ -238,24 +231,19 @@ function increaseCount(event, element) {
 
 /*----------------------------------------------------------------favorite------------------------------------------------------------------- */
 let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-let favoritesList = JSON.parse(localStorage.getItem('favoritesList')) || [];
+//let favoritesList = JSON.parse(localStorage.getItem('favoritesList')) || [];
 
 function clickfav(bookId) {
     const heartIcon = document.getElementById(`icon-fav-${bookId}`);
     const bookIndex = favorites.findIndex(item => item.id === bookId);
     
-    if (bookIndex !== -1) {
+    if (bookIndex !== -1) { //if book exist 
         favorites.splice(bookIndex, 1);
         heartIcon.src = "Pictures/heart-white.png";
         document.getElementById('fav-count').textContent = favorites.length;
-        const bookListIndex = favoritesList.findIndex(item => item.id === bookId);
-        if (bookListIndex !== -1) {
-            favoritesList.splice(bookListIndex, 1);
-            localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
-        }
-
-        localStorage.setItem('favorites', JSON.stringify(favorites));
-    } else {
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+    } 
+    else { //if book not exist in fav
         fetch(apiUrl)
             .then(response => {
                 if (!response.ok) {
@@ -280,10 +268,6 @@ function clickfav(bookId) {
                     
                     favorites.push(favoriteBookInfo);
                     localStorage.setItem('favorites', JSON.stringify(favorites));
-                    
-                    favoritesList.push(favoriteBookInfo);
-                    localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
-                    
                     heartIcon.src = "Pictures/heart (1).png";
                     document.getElementById('fav-count').textContent = favorites.length;
                   
@@ -295,7 +279,7 @@ function clickfav(bookId) {
 
 
   function favClickDisplay() {
-    const favoritesList = JSON.parse(localStorage.getItem('favoritesList')) || [];
+    const favoritesList = JSON.parse(localStorage.getItem('favorites')) || [];
     var main = document.querySelector(".main-without-search");
     main.style.visibility = "hidden"
     var fav = document.querySelector(".fav-page");
@@ -316,7 +300,6 @@ function clickfav(bookId) {
       bookElement.className = "img-and-text-card";
 
       bookElement.innerHTML = `
-          
             <div class="img-card">
                 <img src="${bookInfo.image}" class="card-img" alt="...">
             </div>
@@ -370,10 +353,11 @@ document.addEventListener("DOMContentLoaded", function() {
           } else {
             var main = document.querySelector(".main-without-search");
             main.style.visibility = "hidden";
-
             var bookList = document.querySelector(".book-list");
             bookList.style.visibility = "visible";
-            footer.style.visibility="hidden"
+            footer.style.visibility="hidden";
+
+      
 
 
             displayResults(data);
