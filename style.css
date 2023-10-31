@@ -150,8 +150,7 @@
 
 
 /*first-section of the body - image and description of book*/
-.Parent-div-book-img-and-description {
-    cursor: pointer;
+.parent-div-book-img-and-description {
     display: flex;
     padding: 0px 3rem;
     margin-top: 8rem;
@@ -203,6 +202,7 @@
     width: 33%;
     height: 46px;
     font-size: 15px;
+    cursor: pointer;
 
 }
 
@@ -229,7 +229,8 @@
     color: white;
     width: 40%;
     height: 48px;
-    font-size: 15px
+    font-size: 15px;
+    cursor: pointer;
 }
 
 
@@ -380,6 +381,7 @@
     justify-content: center;
     font-size: 13px;
     cursor: pointer;
+    
 }
 
 /*-----------------------------------------------------seconed page----------------------------------------------*/
@@ -511,6 +513,7 @@
     margin-top: 2rem;
     border-bottom: 1px solid rgba(147, 125, 194, 255);
     padding-bottom: 2rem;
+    cursor: pointer;
 }
 
 .add-cart-button {
@@ -520,6 +523,7 @@
     color: white;
     width: 47%;
     height: 48px;
+    cursor: pointer;
     font-size: 15px;
 }
 
@@ -531,6 +535,7 @@
     width: 47%;
     height: 48px;
     font-size: 15px;
+    cursor: pointer;
 }
 
 
@@ -662,6 +667,7 @@
     cursor: pointer;
     width: 15%;
     color: white;
+    cursor: pointer;
 }
 
 .return-to-main-page {
@@ -918,15 +924,14 @@
     margin-top: 1rem;
 }
 
-.footer{
-    background-color: rgba(147, 125, 194, 255);
-    width: 100%;
-    height: 9%;
-
-}
-
 .footer-text{
     text-align: center;
+    margin: 0;
+    height: 3rem;
+    position: absolute;
+    background-color: antiquewhite;
+    right: 0;
+    left: 0;
 }
 
   
