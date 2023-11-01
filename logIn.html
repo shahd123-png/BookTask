@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LogIn Page</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <header class="header">
+
+        <div class="text-header">
+
+            <h1 class="heading-header" onclick="headclick()"> B-W<img class="book-img-header"
+                    src="Pictures/book.png">rld </h1>
+            <div class="vertical-line"></div>
+            <p class="paragraph-header">We love<br>books</p>
+        </div>
+
+        <div class="search-box">
+            <input id="search-bar" type="search" placeholder="Type any book here">
+
+        </div>
+        <div class="links">
+            <a class="links-a" href="logIn.html" target="_blank">Privacy policy</a>
+            <a class="links-a" href="#" target="_blank" href="test.html">Warranty</a>
+            <a class="links-a" href="#" target="_blank">Shipping </a>
+            <a class="links-a" href="#" target="_blank">Return</a>
+        </div>
+        <div class="icons">
+            <img class="icon" src="Pictures/shopping.png">
+            <div class="vertical-line-icon"></div>
+            <img class="icon" src="Pictures/heart (1).png">
+            <div class="vertical-line-icon"></div>
+            <a href="logIn.html" target="_self"><img class="icon" src="Pictures/user.png"></a>
+        </div>
+    </header>
+
+    <main>
+        <div class="big-form">
+            <form action="#" id="login-form">
+                <div class="heading-div">
+                    <p class="login-header">Log In</p>
+                    <p class="go-to-sign-up">Dont have an account? <a class="link-signup" href="signup.html"
+                            target="_self"> SignUP</a> </p>
+                </div>
+
+                <div class="big-login">
+
+                    <div class="username-div">
+                        <label class="label-username" for="email-log"> Email</label>
+                        <input class="input-username" type="email" id="email" placeholder="Enter Email" required>
+                    </div>
+
+                    <div class="psw-div">
+                        <label class="label-psw" for="psw-log">Password</label>
+                        <input class="input-psw" type="password" id="psw" placeholder="Enter Password">
+                    </div>
+
+
+                    <button type="submit" class="submit-button" id="login-button"
+                        onclick="saveDataLogin()">Login</button>
+
+
+                    <div class="cancel-div">
+                        <button type="button" class="return-to-main-page" onclick="cancelclick()">Cancel</button>
+                    </div>
+
+                </div>
+
+            </form>
+
+
+        </div>
+
+        <div>
+            <p id="login-header-hidden" class="login-header-hidden" hidden>Welcom</p>
+            <h3 hidden class="name-hidden"></h3>
+        </div>
+
+      
+
+
+
+      
+          
+
+    </main>
+
+    
+    
+    <script src="LogInAndSignUp.js"></script>
+</body>
+
+
+
+</html>

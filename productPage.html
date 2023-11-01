@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Product Book Page| We Love Reading</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <header class="header">
+
+        <div class="text-header">
+
+            <h1 class="heading-header" onclick="headclick()"> B-W<img class="book-img-header"
+                    src="Pictures/book.png">rld </h1>
+            <div class="vertical-line"></div>
+            <p class="paragraph-header">We love<br>books</p>
+        </div>
+
+        <div class="search-box">
+            <input id="search-bar" type="search" placeholder="Type any book here">
+
+        </div>
+        <div class="links">
+            <a class="links-a" href="productPage.html">Privacy policy</a>
+            <a class="links-a" href="index.html">Warranty</a>
+            <a class="links-a" href="index.html">Shipping </a>
+            <a class="links-a" href="index.html">Return</a>
+        </div>
+        <div class="icons">
+            <div class="parent-icon-shopping">
+                <span class="span-number" id="cart-count">0</span>
+                <img class="icon-shopping" src="Pictures/shopping.png">
+
+            </div>
+            <div class="vertical-line-icon"></div>
+
+            <div class="parent-fav">
+                <span class="span-number" id="fav-count">0</span>
+                <img class="icon" src="Pictures/heart (1).png" onclick="favClickDisplay()">
+            </div>
+
+            <div class="vertical-line-icon"></div>
+            <a href="signup.html" target="_self"> <img class="icon" src="Pictures/user.png"></a>
+        </div>
+    </header>
+
+    <main class="main-without-search">
+        
+
+        <div class="product-page-big-div">
+            <div class="image-gallary">
+                <div class="div-around-img">
+                    <img class="image-inside-box" src="Pictures/book5.jpg">
+                </div>
+
+                <div class="div-around-img">
+                    <img class="image-inside-box" src="Pictures/book5.jpg">
+                </div>
+
+                <div class="div-around-img">
+                    <img class="image-inside-box" src="Pictures/book5.jpg">
+                </div>
+
+                <div class="div-around-img">
+                    <img class="image-inside-box" src="Pictures/book5.jpg">
+                </div>
+            </div>
+
+            <div class="main-picture-div" id="img-api-send">
+                <img class="main-pic main-pic" src="Pictures/book5.jpg">
+            </div>
+
+            <div class="big-div-data-book">
+                <div class="data-about-book">
+                    <h1 class="book-name-seconed-page bookTitle"></h1>
+                    <p class="author-name author-api"></p>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4 class="price">12.49$</h4>
+                    <p class="paragraph-img" id="par-api"></p>
+
+                    <div class="add-quntity">
+                        <span class="minus" onClick='decreaseCount(event, this)'>-</span>
+                        <input class="input-text" type="text" value="1">
+                        <span class="plus" onClick='increaseCount(event, this)'>+</span>
+                    </div>
+
+
+                    <div class="buttons-product-page">
+                        <button class="add-cart-button">Add to cart</button>
+                        <button class="add-fav-button">Favorite</button>
+
+                    </div>
+                </div>
+
+
+                <div class="all-info-about-book">
+                    <div class="publisher-lang-length">
+                        <div class="details">
+                            <p class="details-heading">Publisher :</p>
+                            <p class="publisher"></p>
+                        </div>
+                        <div class="details">
+                            <p class="details-heading">Language :</p>
+                            <p class="lang">English</p>
+                        </div>
+                        <div class="details">
+                            <p class="details-heading">Print length :</p>
+                            <p class="print-length"></p>
+                        </div>
+
+                    </div>
+
+                    <div class="date-age-dimension">
+                        <div class="details">
+                            <p class="details-heading">Publication date :</p>
+                            <p class="published-Date"></p>
+                        </div>
+                        <div class="details">
+                            <p class="details-heading">Categories :</p>
+                            <p class="catog"></p>
+                        </div>
+                        <div class="details">
+                            <p class="details-heading">Content Version :</p>
+                            <p class="version"></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="closeShopping" hidden></div>
+
+        <div class="selected big-div-api-vertical" hidden>
+        </div>
+
+
+        
+
+    <div class="book-list">
+        <h2 class="text-center" id="text-title">Search Result</h2>
+        <div id="list-output" class="list-output">
+
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="head-and-close-cart">
+            <h1 class="head-add-cart">Books</h1>
+            <div class="closeShopping">X</div>
+
+        </div>
+
+        <ul class="listCard" id="cart-list">
+            <li id="li-item" class="li-item">
+
+
+            </li>
+        </ul>
+    </div>
+    <img class="book1-selected-img" hidden>
+    <p class="author-name" hidden></p>
+    <div class="closeShopping" hidden>X</div>
+    </main>
+
+
+    <footer>
+        <div id="footer" class="footer">
+            <h1 class="footer-text">footer</h1>
+
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="favorite.js"></script>
+    <script src="search.js"></script>
+    <script src="cart.js"></script>
+    <script src="LogInAndSignUp.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Books | We Love Reading</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body class="body">
+    <header class="header">
+
+        <div class="text-header">
+
+            <h1 class="heading-header" onclick="headclick()"> B-W<img class="book-img-header"
+                    src="Pictures/book.png">rld </h1>
+            <div class="vertical-line"></div>
+            <p class="paragraph-header">We love<br>books</p>
+        </div>
+
+        <div class="search-box">
+            <input id="search-bar" type="search" placeholder="Type any book here">
+
+        </div>
+        <div class="links">
+            <a class="links-a" href="productPage.html">Privacy policy</a>
+            <a class="links-a" href="test.html">Warranty</a>
+            <a class="links-a" href="index.html">Shipping </a>
+            <a class="links-a" href="index.html">Return</a>
+        </div>
+        <div class="icons">
+            <div class="parent-icon-shopping">
+                <span class="span-number" id="cart-count">0</span>
+                <img class="icon-shopping" src="Pictures/shopping.png">
+
+            </div>
+            <div class="vertical-line-icon"></div>
+
+            <div class="parent-fav">
+                <span class="span-number" id="fav-count">0</span>
+                <img class="icon" src="Pictures/heart (1).png" onclick="favClickDisplay()">
+            </div>
+
+            <div class="vertical-line-icon"></div>
+            <a href="signup.html" target="_self"> <img class="icon" src="Pictures/user.png"></a>
+        </div>
+    </header>
+
+    <main class="main-without-search">
+
+        <div class="bookTitle" hidden></div>
+        <div class="parent-div-book-img-and-description" id="shahd-click">
+            <div class="vertical-and-description">
+                <div class="vertical-lines-body">
+                    <div class="vertical-body"></div>
+                    <div class="vertical-body-other-color"></div>
+                    <div class="vertical-body-other-color"></div>
+                    <div class="vertical-body-other-color"></div>
+                </div>
+                <div class="book-description">
+                    <button class="button-author">Author of augest</button>
+                    <h1 class="title-img" id="title-api">Eric-Emanuel Schmitt </h1>
+                    <p class="paragraph-img" id="pargraph-api">Eric-Emmanuel Schmitt has been awarded more than 20<br>
+                        literary prizes and distinctions, and in 2001 he received the <br>title of Chevalier des Arts et
+                        des
+                        Lettres. His books have been<br>translated into over 40 languages.</p>
+                    <button class="button-view-book" id="button-api">View his books</button>
+
+                </div>
+            </div>
+
+            <div class="book-img" id="img-big-change">
+                <img class="noc-book-img" src="Pictures/noc-ognia-book.jpg">
+            </div>
+
+        </div>
+
+        <div class="icons-3-details">
+
+            <div class="icon-and-text">
+                <img class="icon-body" src="Pictures/van.png">
+                <h4>Free shiping over 50$</h4>
+            </div>
+
+            <div class="vertical-line"></div>
+
+            <div class="icon-and-text">
+                <img class="icon-body" src="Pictures/star.png">
+                <h4>Save with loyalty points</h4>
+            </div>
+
+            <div class="vertical-line"></div>
+
+            <div class="icon-and-text">
+                <img class="icon-body" src="Pictures/read.png">
+                <a class="read-book-link" href="#" target="_blank">Read a few pages</a>
+            </div>
+
+        </div>
+
+
+
+        <div class="selected big-div-api-vertical" >
+
+    
+        </div>
+
+        <div class="book-list">
+            <h2 class="text-center" id="text-title">Search Result</h2>
+            <div id="list-output" class="list-output">
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="head-and-close-cart">
+                <h1 class="head-add-cart">Books</h1>
+                <div class="closeShopping">X</div>
+
+            </div>
+
+            <ul class="listCard" id="cart-list">
+                <li id="li-item" class="li-item">
+
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="fav-page" id="fav-page">
+            <div class="head-big-fav">
+                <h2 class="fav-heading">Favorite Page</h2>
+            </div>
+
+
+        </div>
+        <div class="bookList" hidden></div>
+        <div class="main-pic" hidden></div>
+        <div class="author-api" hidden></div>
+        <div class="publisher" hidden></div>
+        <div class="lang" hidden></div>
+        <div class="print-length" hidden></div>
+        <div class="published-Date" hidden></div>
+        <div class="catog" hidden></div>
+        <div class="version" hidden></div>
+        <p class="paragraph-img" id="par-api" hidden></p>
+   
+
+    </main>
+
+    <footer>
+
+        <div id="footer" class="footer">
+            <h1 class="footer-text">welcome to hell</h1>
+
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="favorite.js"></script>
+    <script src="search.js"></script>
+    <script src="cart.js"></script>
+    <script src="LogInAndSignUp.js"></script>
+
+
+
+</body>
+
+</html>
+
+
+
